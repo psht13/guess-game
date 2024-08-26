@@ -1,0 +1,41 @@
+.guessButton {
+  width: 100%;
+  max-width: 250px;
+  padding: 16px;
+  border-color: #ffffff99;
+  border-radius: 16px;
+  outline: none;
+  color: #ffffff;
+  background-color: transparent;
+  transition: all 150ms ease-in-out;
+  text-align: center;
+  font-size: large;
+}
+
+.guessButton:hover,
+.guessButton:focus {
+  border-color: #ffffff;
+  color: #000;
+  background-color: #ffffff;
+}
+
+.startButton {
+  width: 100%;
+  max-width: 250px;
+  padding: 16px;
+  border-color: #ffffff99;
+  border-radius: 16px;
+  outline: none;
+  color: #ffffff;
+  background-color: transparent;
+  transition: all 150ms ease-in-out;
+  text-align: center;
+  font-size: large;
+}
+
+.startButton:hover,
+.startButton:focus {
+  border-color: #ffffff;
+  color: #000;
+  background-color: #ffffff;
+}
