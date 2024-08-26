@@ -2,12 +2,15 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 require("dotenv").config();
+const TelegramBot = require("node-telegram-bot-api");
 
 const app = express();
 
 const PORT = process.env.PORT || 50001;
 
 app.use(bodyParser.json());
+
+const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
 
 let targetNumber = null;
 
@@ -36,6 +39,26 @@ app.post("/guess", (req, res) => {
     res.json({ message: "Correct! Play again?" });
     targetNumber = null;
   }
+});
+
+bot.onText(/\/start/, (msg) => {
+  const chatId = msg.chat.id;
+  bot.sendMessage(
+    chatId,
+    "Welcome to Guess the Number Game! Click the button below to play.",
+    {
+      reply_markup: {
+        inline_keyboard: [
+          [
+            {
+              text: "Play Game",
+              web_app: { url: "https://guess-game-production.up.railway.app/" },
+            },
+          ],
+        ],
+      },
+    }
+  );
 });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT} `));
