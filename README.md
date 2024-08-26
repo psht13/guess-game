@@ -24,4 +24,8 @@ cd guess-game
 npm start
 
 ```
+#### This command will:
+
+ - Build the React app from the client directory.
+ - Start the Node.js server from the server directory.
 
